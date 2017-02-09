@@ -1,0 +1,226 @@
+@import 'variables';
+
+.start-project-form {
+  padding: 20px 40px;
+  background: #fff;
+  border-top: 1px solid #aeabab;
+  border-right: 1px solid #aeabab;
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.start-project-form label {
+  text-align: left !important;
+  color: #777;
+}
+
+.start-project-tabs {
+  margin-top: 28px;
+  list-style: none;
+  padding: 0;
+}
+
+.start-project-tabs li {
+  background: #aeaaaa;
+  padding: 10px 15px;
+  font-size: 15px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.start-project-tabs li.active .fa {
+  color: #fff600;
+}
+.start-project-tabs li.active span {
+  color: #fff600;
+}
+.start-project-tabs li .fa {
+  margin-right: 10px;
+  color: #fff;
+}
+
+.start-project-tabs li span {
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.start-project-tabs .active .arrow-right {
+  position: absolute;
+  right: -13px;
+  top: 8px;
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid #aeaaaa;
+}
+
+.start-project-form input[type='text'] {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+}
+
+.start-project-form textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  resize: none;
+  height: 90px;
+  border-radius: 10px;
+  outline: none;
+  padding: 5px 10px;
+}
+
+.start-project input[type='submit'] {
+  margin: 0 auto;
+  margin-top: 15px;
+  display: block;
+}
+
+.start-project-form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+  background: transparent;
+  padding: 9px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  outline: none;
+  width: 120px;
+  cursor: pointer;
+  color: #333;
+  z-index: 1;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  height: 30px;
+  padding: 0 10px;
+}
+
+.start-project-form .select-wrapper {
+  position: relative;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  zoom: 1;
+  display: inline;
+  margin-right: -35px;
+}
+
+.start-project-form .select-wrapper:after {
+  content: '\f078';
+  font-family: FontAwesome;
+  font-size: 12px;
+  color: #777777;
+  padding: 8px;
+  position: relative;
+  right: 35px;
+  top: -1px;
+  z-index: 0;
+  width: 10%;
+  line-height: 10%;
+  border-left: 1px solid #ccc;
+}
+
+.start-project-form .project-title input {
+  padding-right: 50px;
+}
+
+.start-project-form .project-title .text-count-wrapper {
+  position: absolute;
+  top: 3px;
+  right: 14px;
+  font-size: 11px;
+}
+
+.start-project-form textarea {
+  padding-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.start-project-form .project-summary .text-count-wrapper {
+  position: absolute;
+  bottom: 7px;
+  right: 30px;
+  font-size: 11px;
+  background: #fff;
+}
+
+.start-project-form .funding strong {
+  position: absolute;
+  top: 4px;
+  color: #777;
+}
+
+.start-project-form .funding input {
+  padding-left: 13px;
+}
+
+.start-project .reward .percentage {
+  margin-bottom: 10px;
+  strong {
+    font-size: 24px;
+    margin: 0 10px;
+  }
+  span {
+    font-size: 24px;
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  input {
+    width: 44px;
+    text-align: right;
+    outline: none;
+    border: none;
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+.start-project .reward .title {
+  margin-top: 0;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+.start-project .reward .amount {
+  background: $primary-color;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 7px 15px;
+  margin-bottom: 10px;
+  margin-right: -40px;
+}
+
+.start-project .reward .upto {
+  span {
+    font-size: 18px;
+  }
+  input {
+    width: 30px;
+    height: 24px;
+    text-align: center;
+    font-size: 18px;
+    text-decoration: underline;
+    font-weight: bold;
+    color: black;
+    margin: 0 5px;
+  }
+}
+
+.start-project-form .dropzone-previews .dz-image {
+  width: 100px;
+  height: 100px;
+  img {
+    width: 100px;
+    height: 100px;
+  }
+}
+

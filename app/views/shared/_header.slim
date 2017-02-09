@@ -1,0 +1,16 @@
+.navbar.navbar-static.navbar-default#site-header
+  .container-fluid
+    .header-wrapper
+      .navbar-header
+        .navbar-brand
+          .show-sidebar data-target=".sidebar-left" data-toggle="sidebar"
+            = image_tag 'discover_menu_icon', class: 'show-sidebar-icon'
+          = link_to root_path do
+            = image_tag 'logo'
+      .collapse.navbar-collapse#bs-example-navbar-collapse-1
+        ul.nav.navbar-nav.navbar-right
+          li= link_to 'I have an idea', new_idea_path, class: detect_active_tab(new_idea_path)
+          li= link_to 'I have a Design', projects_path, method: :post, class: (detect_active_tab(edit_project_path(@project)) if @project)
+          li= link_to 'Workspace', workspace_path, class: detect_active_tab(workspace_path)
+          li= link_to '2developer', developer_path, class: detect_active_tab(developer_path)
+          li= link_to 'Discover', projects_path, class: detect_active_tab(projects_path)

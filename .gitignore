@@ -1,0 +1,9 @@
+/.bundle
+/log/*
+!/log/.keep
+/tmp
+/public/uploads/*
+tags
+*.swp
+*.swo
+.DS_Store

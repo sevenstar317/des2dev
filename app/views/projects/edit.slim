@@ -1,0 +1,37 @@
+.row
+  .col-md-8.col-md-offset-2
+    h1.orange-color Let's start your project!
+    h5.pull-left Everything start from scratch! Briefly explain and breakdown your detailed plan to make a great first impression!
+
+.row.start-project.background-grey.padding-top-20.padding-bottom-50
+  .col-md-8.col-md-offset-2
+    .row
+      .col-md-4
+        = render 'projects/form/sidebar'
+      .col-md-8
+        p.text-center
+          | Step 0
+          = @current_step
+          |  out of 04
+        = form_for @project, multipart: true, html: { id: "#{'dropzone-upload' if @current_step == 1}", class: 'dropzone', style: "border: 0; padding: 0; background: transparent"} do |f|
+          .start-project-form.form-horizontal role='form'
+            - case @current_step.to_i
+              - when 1
+                = hidden_field_tag :step, 1
+                = render partial: 'projects/form/overview', locals: { f: f }
+              - when 2
+                = hidden_field_tag :step, 2
+                = render partial: 'projects/form/reward', locals: { f: f }
+              - when 3
+                = hidden_field_tag :step, 3
+                .form-group
+                  label.col-sm-4.control-label Story:
+                  .col-sm-8.project-summary
+                    = f.text_area :our_story, style: 'height: 250px'
+              - when 4
+                = hidden_field_tag :step, 4
+                .form-group
+                  label.col-sm-4.control-label Team:
+                  .col-sm-8.project-summary
+                    = f.text_area :our_team, style: 'height: 250px'
+          = f.submit 'Save & continue', class: 'btn btn-primary box-center margin-top-10', style: 'width: 150px'

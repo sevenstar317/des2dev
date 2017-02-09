@@ -1,0 +1,102 @@
+.row
+  .col-md-8.col-md-offset-2
+    h1.orange-color Brief Us
+    h5.pull-left Briefly explain your detailed plan to help designers know what you're looking for.
+.row.idea-brief.background-grey.padding-top-20.padding-bottom-50
+  .col-md-8.col-md-offset-2
+    = form_for @idea, url: idea_briefs_path(@idea), method: :post, multipart: true, html: { id: 'dropzone-upload', class: 'dropzone', style: "border: 0; padding: 0"} do |f|
+      .brief-holder
+        .corner-label Design Brief
+        .row
+          .col-md-3.col-sm-3
+            label for='name' Project title
+          .col-md-9.col-sm-9.title
+            = f.text_field :name
+        .row.margin-top-20
+          .col-md-3.col-sm-3
+            label for='category' Category
+          .col-md-9.col-sm-9
+            = f.select :category_ids, category_select, {}, class: 'category-multi-select', multiple: true
+        .row.margin-top-20
+          .col-md-3.col-sm-3
+            label for='description' Describe what the App does
+          .col-md-9.col-sm-9.description
+            = f.text_area :description
+        hr
+        .row.margin-top-20
+          .col-md-12.col-sm-12.designer
+            label Designer
+            p
+              | There's 3 way you can work with the designers. First you can
+              strong Assign a designer
+              | that  you believe is the right person to do the job. Second, Select Favorite designers and let them show you their best work! Last you can make an
+              strong Open Contest,
+              | in which all designers in the community can submit their work, this way cna expect many various designs, and choose the best!
+            .col-md-4.col-sm-4
+              .radio
+                label
+                  = f.radio_button :designer_participation, :assign
+                  strong Assign a Designer
+                  span.orange-color Save 5%
+            .col-md-4.col-sm-4
+              .radio
+                label
+                  = f.radio_button :designer_participation, :favirite
+                  strong Select Favorite
+            .col-md-4.col-sm-4
+              .radio style='border-color: transparent'
+                label
+                  = f.radio_button :designer_participation, :contest
+                  strong Make a Contest
+                  span.orange-color.no-margin + 20%
+        hr
+        .row.margin-top-20
+          .col-md-3.col-sm-3
+            label for='deadline' Deadline
+          .col-md-9.col-sm-9
+            = f.text_field :deadline, class: 'date-picker'
+        .row.margin-top-20
+          .col-md-3.col-sm-3
+            label for='references' References
+          .col-md-9.col-sm-9
+            p Let the designers know what kind of design style you need.
+            = f.text_area :references
+        .row.margin-top-20
+          .col-md-3.col-sm-3
+            label for='flow' Describe the Flow of App
+          .col-md-9.col-sm-9.description
+            = f.text_area :flow
+        .row.margin-top-20
+          .col-md-3.col-sm-3
+            label for='device' Device
+          .col-md-9.col-sm-9
+            ul.devices
+              - Device.all.each do |device|
+                = f.fields_for :ideas_devices, @idea.ideas_devices.find_or_initialize_by(device: device) do |device_field|
+                  li
+                    .checkbox
+                      label
+                        = device_field.check_box :_destroy, { checked: device_field.object.persisted? }, '0', '1'
+                        = device_field.hidden_field :device_id
+                        span= device_field.object.device.to_s
+                    - if device.name == Device::OTHER
+                      = device_field.text_field :note, class: 'other-devise'
+        .row.margin-top-20
+          .col-md-3.col-sm-3
+            label for='files' Files or Sketches
+          .col-md-9.col-sm-9
+            .dropzone-previews.dz-message
+              .upload-file
+                p Browse image from your computer
+                p supported format .JPEG, .PNG, .GIF, .BMP
+                p max file size 50mb
+                = fa_icon 'plus'
+        .row.margin-top-30
+          .col-md-12.col-sm-12
+            .pull-right
+              = link_to idea_pricings_path(@idea), class: 'btn btn-primary btn-sm margin-right-10', id: 'submit-data', style: 'width: 110px' do
+                = fa_icon 'chevron-left'
+                | BACK
+              = button_tag type: 'submit', class: 'btn btn-primary btn-sm', style: 'width: 110px' do
+                | NEXT
+                = fa_icon 'chevron-right'

@@ -1,0 +1,70 @@
+.row
+  .col-md-8.col-md-offset-2
+    h1.orange-color Tell us what you want
+    h5.pull-left Let our comminity accomodate your design needs and set you budget
+.row.idea-pricing.background-grey.padding-top-20.padding-bottom-50
+  .col-md-8.col-md-offset-2
+    p.orange-color.margin-top-20 Get 5% Discount for each checked item
+    = form_for @idea, url: idea_pricings_path(@idea), method: :post do |f|
+      .calculation-items
+        = f.fields_for :prices, @idea.price(Price::LOGO) do |price_field|
+          .checkbox.logo
+            label
+              = price_field.check_box :active
+              span.currency $
+              span.price= price_field.object.total.round
+              span.description= price_field.object.to_s
+        = f.fields_for :prices, @idea.price(Price::ICON) do |price_field|
+          .checkbox.icon
+            label
+              = price_field.check_box :active
+              span.currency $
+              span.price= price_field.object.total.round
+              span.description= price_field.object.to_s
+        = f.fields_for :prices, @idea.price(Price::SCREENS) do |price_field|
+          .checkbox.screens
+            label
+              = price_field.check_box :active
+              span.currency $
+              span.price= price_field.object.total.round
+              = price_field.text_field :quantity, value: 5
+              span.description= price_field.object.to_s
+              span.description.orange-color style='margin-left: 10px' (+ $89 for 6 screens) (+ $49 for 10 screens)
+        = f.fields_for :prices, @idea.price(Price::FLOW) do |price_field|
+          .checkbox.flow
+            label
+              = price_field.check_box :active
+              span.currency $
+              span.price= price_field.object.total.round
+              span.description= price_field.object.to_s
+        = f.fields_for :prices, @idea.price(Price::EXPERT) do |price_field|
+          .checkbox.expert
+            label
+              = price_field.check_box :active
+              span.currency $
+              span.price= price_field.object.total.round
+              span.description= price_field.object.to_s
+      p
+        span.orange-color.margin-right-10 Discount:
+        span.orange-color.discount-percentage 20
+        span.orange-color %
+      .row
+        .col-md-10.col-sm-10
+          .calculations
+            .subtotal
+              strong.primary-color Subtotal
+              span.value $1145
+            .minus
+              span -
+            .discount
+              strong.primary-color Discount
+              span.orange-color.value $229
+            .grand-total.clearfix
+              strong.primary-color Grand total
+              span.value $916
+              span.note.primary-color + TAX
+        .col-md-2.col-sm-2
+          = button_tag type: 'submit', class: 'btn btn-primary btn-lg next' do
+            | NEXT
+            = fa_icon 'chevron-right'
+      p.remark.margin-top-10 Price are on USD

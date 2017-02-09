@@ -1,0 +1,51 @@
+.opportunity-item
+  .short-content
+    .row
+      .col-md-12.col-sm-12.col-xs-12
+        .row
+          .col-md-9.col-sm-9
+            .opportunity-image
+              .action
+                span= number_to_currency(idea.grand_total)
+                = link_to 'APPLY', '#', class: 'btn btn-primary apply-btn'
+            .description
+              h3.title= idea.name
+              p.text-justify.truncated-text= idea.description
+              ul.tags
+                - idea.devices.each do |device|
+                  li= device.to_s
+              em.owner.pull-right= idea.owner.to_s
+              .deadline
+                - if idea.deadline
+                  p.primary-color Deadline
+                  span.date= idea.deadline.strftime('%B %d, %Y')
+                  span.days
+                    = fa_icon 'clock-o'
+                    = deadline_days(idea.deadline)
+                    |  Days
+                  - if !idea.contest?
+                    span.private
+                      = fa_icon 'lock'
+                      | Private
+          .col-md-3.col-sm-3
+            .info-block
+              - if idea.contest?
+                .top-label Contest
+              - else
+                .top-label.background-orange Not assigned
+              .info-icon.clearfix
+                span.fa-stack.fa-lg.pull-left
+                  = fa_icon 'user'
+                span.info 5 Contestants
+              .info-icon.clearfix
+                span.fa-stack.fa-lg.pull-left
+                  = fa_icon 'image'
+                span.info 3 designers
+              .info-icon.clearfix
+                span.fa-stack.fa-lg.pull-left
+                  = fa_icon 'commenting'
+                span.info 3 feedback
+  - if idea.private_contest
+    = render partial: 'ideas/private_content', locals: { idea: idea }
+  - else
+    = render partial: 'ideas/public_content', locals: { idea: idea }

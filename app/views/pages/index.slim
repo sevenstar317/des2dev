@@ -1,0 +1,54 @@
+div data-target=".sidebar-left" data-toggle="sidebar"
+  = image_tag 'home_corner_icon', class: 'show-sidebar-icon'
+.landing-wrapper
+  .landing-center-line.clearfix
+    .center-intro.clearfix
+      .col-md-offset-2.col-md-10.col-sm-offset-1.col-sm-11
+        .col-md-6.col-sm-6
+          = image_tag 'home_center_text', style: 'margin-right: 30px', class: 'center-intro-text-image'
+        .col-md-6.col-sm-6
+          = link_to projects_path, method: :post, class: 'discover-icon clearfix' do
+            = image_tag 'center_discover_icon'
+            p
+              strong style='background: #33d2c3' discover
+              span design and support them into development
+    .center-links-holder
+      = image_tag 'center_top_text', class: 'landing-center-text'
+      .white-line.clearfix
+        div class="#{signed_in? ? 'col-md-8 col-md-offset-4' : 'col-md-10 col-md-offset-2'}"
+          .row.center-links
+            .col-md-2.col-sm-12.center-link
+              = link_to new_idea_path do
+                = image_tag 'center_idea_icon'
+                p
+                  span I have an
+                  strong style='background: #ffba00' idea
+            .col-md-2.col-sm-12.center-link
+              = link_to projects_path, method: :post do
+                = image_tag 'center_design_icon'
+                p
+                  span I have a
+                  strong style='background: #ff7800' design
+            - unless signed_in?
+              .col-md-2.col-sm-12.center-link
+                = link_to '#' do
+                  = image_tag 'center_designer_icon'
+                  p
+                    span I am a
+                    strong style='background: #ff7778' disigner
+              .col-md-2.col-sm-12.center-link
+                = link_to '#' do
+                  = image_tag 'center_developer_icon'
+                  p
+                    span I am a
+                    strong style='background: #8dcf24' developer
+            .col-md-2.col-sm-12.center-link
+              = link_to projects_path do
+                = image_tag 'center_discover_icon'
+                p
+                  strong style='background: #33d2c3' discover
+      = image_tag 'center_down_text', class: 'landing-center-text'
+
+
+/footer.landing-footer
+/  p.text-center Copyright © 2016 design2developer. All right reserved

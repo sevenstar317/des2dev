@@ -1,0 +1,400 @@
+@import 'variables';
+
+.idea-overview .files {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  li {
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    width: 100px;
+    height: 70px;
+  }
+}
+
+.idea-overview .title {
+  margin-top: 2px;
+  font-size: 16px;
+}
+
+.idea-overview .items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 800px;
+  li {
+    display: inline-block;
+    width: 300px;
+  }
+}
+
+.idea-overview .price {
+  border: 1px solid #ccc;
+  padding: 10px;
+
+  div {
+    display: inline-block;
+    text-align: center;
+    padding: 0 30px;
+  }
+  span {
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+  }
+  strong {
+    font-size: 16px;
+  }
+
+  .grand-total {
+    float: right;
+    border-left: 1px solid #ccc;
+  }
+
+  .plus {
+    padding:0;
+  }
+}
+
+.idea-billing input[type='text'] {
+  background: #f9f9f9;
+  border: 1px solid $primary-color;
+}
+
+.idea-billing input[type='text']:focus {
+  border: 1px solid $primary-color;
+}
+
+.idea-payment .payment-methods {
+  background: #fff;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 20px;
+  label {
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+  }
+}
+
+.idea-payment ul.nav.nav-tabs {
+  border: none;
+}
+
+.idea-payment ul.nav.nav-tabs li > a {
+  border-radius: 0;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  background: #ccc;
+}
+
+.idea-payment ul.nav.nav-tabs li.active > a {
+  border-radius: 0;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  background: #999;
+}
+
+.idea-payment .tab-content {
+  background: #fff;
+  padding: 30px 50px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.idea-pricing .checkbox {
+  margin: 30px 0;
+}
+
+.idea-pricing .checkbox input[type='checkbox'] {
+  margin-top: 2px;
+}
+
+.idea-pricing .checkbox span {
+  font-size: 14px;
+}
+
+.idea-pricing .checkbox span.price {
+  width: 70px;
+  display: inline-block;
+}
+
+.idea-pricing .checkbox span.currency {
+  margin-left: 10px;
+}
+
+.idea-pricing .checkbox input[type='text'] {
+  width: 40px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.idea-pricing .calculations {
+  border: 1px solid #ccc;
+  padding: 10px;
+
+  div {
+    display: inline-block;
+    text-align: center;
+    padding: 0 30px;
+  }
+  span {
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+  }
+  strong {
+    font-size: 16px;
+  }
+
+  .grand-total {
+    float: right;
+    border-left: 1px solid #ccc;
+  }
+
+  .minus {
+    padding:0;
+  }
+}
+
+.idea-pricing .grand-total strong {
+  display: block;
+}
+
+.idea-pricing .grand-total span {
+  display: inline-block;
+}
+
+.idea-pricing .grand-total .note {
+  margin-left: 10px;
+  font-size: 12px;
+}
+
+.idea-pricing .next {
+  margin: 0 auto;
+  display: block;
+  width: 100px;
+  height: 64px;
+  padding-top: 15px;
+  margin-left: -20px;
+  font-size: 16px;
+}
+
+.idea-brief .brief-holder {
+  background: #fff;
+  padding: 70px;
+  border: 1px solid #ccc;
+  position: relative;
+}
+
+.idea-brief .corner-label {
+  position: absolute;
+  background: #999;
+  color: #fff;
+  text-transform: uppercase;
+  display: block;
+  top: 0;
+  left: 0;
+  padding: 4px 30px;
+  height: 28px;
+  width: 180px;
+}
+
+.idea-brief .corner-label:before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  border-top: 28px solid #999;
+  border-right: 30px solid #fff;
+  width: 0;
+}
+
+.idea-brief input[type='text'] {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+}
+
+.idea-brief textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  resize: none;
+  height: 90px;
+  border-radius: 10px;
+  outline: none;
+  padding: 5px 10px;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.idea-brief .project-title input {
+  padding-right: 50px;
+}
+
+.idea-brief .title .text-count-wrapper {
+  position: absolute;
+  top: 3px;
+  right: 14px;
+  font-size: 11px;
+}
+
+.idea-brief .description .text-count-wrapper {
+  position: absolute;
+  bottom: 7px;
+  right: 30px;
+  font-size: 11px;
+  background: #fff;
+}
+
+.idea-brief .description textarea {
+  height: 300px;
+}
+
+.idea-brief .selectize-input {
+  border: 1px solid #ccc !important;
+  box-shadow: none !important;
+  background-color: #eee !important;
+  background-image: image-url(selectbox-down-arrow);
+  background-repeat: no-repeat;
+  background-position: 98% 40%;
+}
+
+.idea-brief .designer {
+  strong {
+    margin: 0 5px;
+  }
+}
+
+.idea-brief .designer .radio {
+  border-right: 1px solid #eee;
+  height: 70px;
+  padding-top: 20px;
+
+  strong {
+    font-size: 13px;
+  }
+  input {
+    margin-top: -1px;
+  }
+
+  span {
+    display: block;
+  }
+}
+
+.idea-brief .other-devise {
+  width: 200px !important;
+  border: 1px solid #ccc !important;
+  border-radius: 5px;
+  background: #eee;
+  position: absolute;
+  top: 7px;
+  left: 70px;
+}
+
+.idea-brief .devices {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 400px;
+  li {
+    display: inline-block;
+    width: 150px;
+    position: relative;
+  }
+}
+
+.icon-books {
+  background-image: image-url(category-icons/books);
+}
+
+.icon-business {
+  background-image: image-url(category-icons/business);
+}
+
+.icon-catalog {
+  background-image: image-url(category-icons/catalog);
+}
+
+.icon-education {
+  background-image: image-url(category-icons/education);
+}
+
+.icon-entertainment {
+  background-image: image-url(category-icons/entertainment);
+}
+
+.icon-finance {
+  background-image: image-url(category-icons/finance);
+}
+
+.icon-foodanddrink {
+  background-image: image-url(category-icons/foodanddrink);
+}
+
+.icon-games {
+  background-image: image-url(category-icons/games);
+}
+
+.icon-healthandfitness {
+  background-image: image-url(category-icons/healthandfitness);
+}
+
+.icon-kids {
+  background-image: image-url(category-icons/kids);
+}
+
+.icon-lifestyle {
+  background-image: image-url(category-icons/lifestyle);
+}
+
+.icon-medical {
+  background-image: image-url(category-icons/medical);
+}
+
+.icon-music {
+  background-image: image-url(category-icons/music);
+}
+
+.icon-navigation {
+  background-image: image-url(category-icons/navigation);
+}
+
+.icon-news {
+  background-image: image-url(category-icons/news);
+}
+
+.icon-photoandvideo {
+  background-image: image-url(category-icons/photoandvideo);
+}
+
+.icon-productivity {
+  background-image: image-url(category-icons/productivity);
+}
+
+.icon-reference {
+  background-image: image-url(category-icons/reference);
+}
+
+.icon-shopping {
+  background-image: image-url(category-icons/shopping);
+}
+
+.icon-sports {
+  background-image: image-url(category-icons/sports);
+}
+
+.icon-travel {
+  background-image: image-url(category-icons/travel);
+}
+
+.icon-utilities {
+  background-image: image-url(category-icons/utilities);
+}
+
+.idea-billing .selectize-control.single .selectize-input, .selectize-dropdown.single {
+  border-color: $primary-color;
+}

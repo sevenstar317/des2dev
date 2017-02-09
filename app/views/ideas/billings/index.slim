@@ -1,0 +1,46 @@
+.row
+  .col-md-8.col-md-offset-2
+    h1.orange-color Billing Information
+    h5.pull-left Please fill required field of your billing information.
+.row.idea-billing.background-grey.padding-top-20.padding-bottom-50
+  .col-md-6.col-md-offset-3
+    = form_for current_user, url: idea_billings_path(@idea), method: :post do |f|
+      .row
+        .col-md-6.col-sm-12
+          .form-group
+            label for='full_name' Full name
+            = f.text_field :full_name, class: 'form-control'
+          .form-group
+            label for='country' Country
+            = f.collection_select :country_code, Country.all, :alpha2, :name, {prompt: true}, class: 'country-select'
+          .form-group style='margin-top: -8px'
+            label for='address' Address
+            = f.text_field :address, class: 'form-control'
+          .form-group
+            label for='city' City
+            = f.text_field :city, class: 'form-control'
+          .form-group
+            label for='zip_code' Postal/Zip code
+            = f.text_field :zip_code, class: 'form-control'
+        .col-md-6.col-sm-12
+          .form-group
+            label for='company' Company
+            = f.text_field :company, class: 'form-control'
+          .form-group
+            label for='phone' Phone number
+            = f.text_field :phone, class: 'form-control'
+          .form-group
+            label for='address_2' Address Line 2
+            = f.text_field :address_2, class: 'form-control'
+          .form-group
+            label for='state' Province/State
+            = f.text_field :state, class: 'form-control'
+          .form-group
+            label for='email' Email
+            = f.text_field :billing_email, class: 'form-control'
+      .row
+        .text-center
+          = button_tag type: 'submit', class: 'btn btn-primary btn-sm' do
+            | NEXT
+            = fa_icon 'chevron-right'
+

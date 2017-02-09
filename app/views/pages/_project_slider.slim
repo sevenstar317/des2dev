@@ -1,0 +1,34 @@
+#project-carousel.carousel.slide
+  .carousel-inner
+    .active.item data-slide-number='0'
+      = image_tag 'workspace-detail-project-image', class: 'img-responsive'
+    .item data-slide-number='1'
+      = image_tag 'workspace-detail-project-slider-image1', class: 'img-responsive'
+    .item data-slide-number='2'
+      = image_tag 'workspace-detail-project-slider-image2', class: 'img-responsive'
+    .item data-slide-number='3'
+      = image_tag 'workspace-detail-project-slider-image3', class: 'img-responsive'
+    .item data-slide-number='4'
+      = image_tag 'workspace-detail-project-slider-image4', class: 'img-responsive'
+.margin-top-10.text-center
+  em Image 17 of 17
+#project-thumb-carousel.carousel.slide.margin-top-10
+  a.slider-control.left data-slide='prev' href='#project-thumb-carousel'
+    span.fa-stack.fa-lg
+      = fa_icon 'chevron-left'
+  .carousel-inner
+    .item.active
+      a.slider-thumb#carousel-selector-0.selected
+        = image_tag 'workspace-detail-project-image', class: 'img-responsive'
+      a.slider-thumb#carousel-selector-1
+        = image_tag 'workspace-detail-project-slider-image1', class: 'img-responsive'
+      a.slider-thumb#carousel-selector-2
+        = image_tag 'workspace-detail-project-slider-image2', class: 'img-responsive'
+      a.slider-thumb#carousel-selector-3
+        = image_tag 'workspace-detail-project-slider-image3', class: 'img-responsive'
+    .item
+      a.slider-thumb#carousel-selector-4.selected
+        = image_tag 'workspace-detail-project-slider-image4', class: 'img-responsive'
+  a.slider-control.right data-slide='next' href='#project-thumb-carousel'
+    span.fa-stack.fa-lg
+      = fa_icon 'chevron-right'

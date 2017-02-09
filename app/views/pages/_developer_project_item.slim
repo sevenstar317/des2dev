@@ -1,0 +1,24 @@
+.col-sm-6.col-md-4
+  .thumbnail.developer-project-item
+    = image_tag project_image, class: 'cover-image'
+    .details
+      .join-project Join Project
+      .content
+        .pull-right
+          = image_tag 'project_icon', class: 'img-responsive'
+          .designed-by
+            em Designed by:
+            span Kice1
+        h3 Loud App
+        em Chat
+    .caption
+      .info-icon.clearfix.pull-right
+        span.fa-stack.fa-lg.pull-left
+          = fa_icon 'heart-o'
+        span.info 560 Funders
+      p
+        | Raised
+        span style='color: red' $90.000
+        | in
+        span style='color: red' 90
+        | Days

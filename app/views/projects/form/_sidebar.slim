@@ -1,0 +1,20 @@
+ul.start-project-tabs
+  li class="#{'active' if @current_step == 1}"
+    = fa_icon 'star', class: 'fa-lg'
+    span Overview
+    .arrow-right
+  li class="#{'active' if @current_step == 2}"
+    = fa_icon 'star', class: 'fa-lg'
+    span Reward
+    .arrow-right
+  li class="#{'active' if @current_step == 3}"
+    = fa_icon 'star', class: 'fa-lg'
+    span Story
+    .arrow-right
+  li class="#{'active' if @current_step == 4}"
+    = fa_icon 'star', class: 'fa-lg'
+    span Team
+    .arrow-right
+p.margin-top-25 Learn how to maximize your project by adding a video.
+iframe width='100%' src="https://www.youtube.com/embed/YQHsXMglC9A"
+

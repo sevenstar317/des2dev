@@ -1,0 +1,73 @@
+.expanded-content.private
+  .triangle
+  = link_to '#', class: 'close-btn' do
+    span.fa-stack.fa-lg.pull-left
+      = fa_icon 'close'
+    strong Close
+  .row
+    .draw-day
+      strong Tickets:
+      span.tickets-number 1
+      p Draw Day
+      .date February 16, 2017
+    .col-md-offset-1.col-sm-offset-1.col-md-2.col-sm-2
+      label Comission
+    .col-md-9.col-sm-9
+      .comission.manageable-number data-step=5 data-min=70 data-max=80
+        = link_to '#', class: 'orange-circle-button decrement-btn'
+          = fa_icon 'chevron-left'
+        = text_field_tag :comission, 80, id: 'comission'
+        span %
+        = link_to '#', class: 'orange-circle-button increment-btn'
+          = fa_icon 'chevron-right'
+      ul.membership.margin-top-10
+        li
+          .percentage +5%
+        li
+          = image_tag 'd2d-icon-grayed', class: 'img-responsive'
+        li= check_box_tag :d2d_member, nil, false, disabled: true
+        li= link_to 'How to become a member?', '#', class: 'how-become-member'
+
+  .row.margin-top-20
+    .col-md-offset-1.col-sm-offset-1.col-md-2.col-sm-2
+      label Required items
+    .col-md-9.col-sm-9
+      ul.items
+        - idea.prices.active.each do |price|
+          li
+            .checkbox.no-margin-top
+              label.standard-text style='cursor: default'
+                input type='checkbox' checked='checked' disabled='true' style='background-color: #33d2c3 !important; border-color: #33d2c3 !important'
+                = price.kind == Price::SCREENS[:kind] ? "#{price.quantity} #{price.name}" : price.name
+  .row.margin-top-20
+    .col-md-offset-1.col-sm-offset-1.col-md-2.col-sm-2
+      label Brief
+    .col-md-9.col-sm-9
+      .brief
+        = fa_icon 'lock'
+        p.text-center
+          | This is a private contest, sign
+          = link_to 'NDA', '#'
+          |  first to view brief
+  .row.margin-top-20
+    .col-md-offset-1.col-sm-offset-1.col-md-2.col-sm-2
+      label Files
+    .col-md-9.col-sm-9
+      ul.files
+        - idea.images.each do |image|
+          li
+            figure
+              .private-image
+                = fa_icon 'lock'
+              /figcaption.text-center= File.basename(image.file_url)
+  .row.margin-top-20
+    .col-md-offset-1.col-sm-offset-1.col-md-2.col-sm-2
+      label Privacy
+    .col-md-9.col-sm-9
+      .privacy
+        span Sign NDA
+        = check_box_tag :sing_nda, nil, false, disabled: true
+
+  .row.margin-top-20
+    .col-md-12.col-sm-12
+      = link_to 'READY', '#', class: 'btn btn-primary box-center', style: 'padding-top: 10px; width: 100px;'

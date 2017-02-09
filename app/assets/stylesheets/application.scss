@@ -1,0 +1,13 @@
+/*
+ *= require_self
+ *= require selectize.default
+ *= require datepicker.min
+ *= require jquery.fileupload
+ *= require jquery.fileupload-ui
+ *= require dropzone/dropzone
+ *= require_tree
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";

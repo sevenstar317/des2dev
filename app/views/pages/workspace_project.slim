@@ -1,0 +1,129 @@
+.row
+  .col-md-8.col-md-offset-2
+    h1.orange-color Ongoing project
+    .category-select-wrapper.pull-right
+      select.category-select
+        option Categories
+    h5.pull-left Discuss, project detail, work together with the team.
+.row
+  .col-md-8.col-md-offset-2
+    h2 Loud
+.row.project-item
+  .col-md-8.col-md-offset-2
+    .row
+      .col-md-6.col-sm-12.col-xs-12
+        = image_tag 'project_icon', class: 'project-icon img-responsive'
+        strong.company-name Kice company
+        p Redefine new way of Game competition
+      .col-md-6.col-sm-12.col-xs-12
+        .col-md-8
+          ul.project-nav.nav.nav-pills
+            li.active= link_to 'Overview', '#overview1', data: { toggle: 'pill' }
+            li
+              = link_to '#updates1', data: { toggle: 'pill' } do
+                | Updates
+                span.unread-count 3
+        .col-md-4
+          = link_to workspace_path, class: 'close-btn clearfix' do
+            span.fa-stack.fa-lg.pull-left
+              = fa_icon 'close'
+            strong Close
+    .row.margin-top-10
+      .col-md-6.col-sm-12.col-xs-12
+        = render 'project_slider'
+      .col-md-6.col-sm-12.col-xs-12
+        .tab-content
+          .tab-pane.active.overview#overview1
+            h4 Project summary
+            p.text-justify Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id odio tristique nulla finibus tristique.
+            .clearfix
+              = link_to 'Read More', '#', class: 'read-more'
+            h4 Fund
+            p
+              | Raised
+              span style='color: red' $ 90.000
+              | in
+              span style='color: red' 90
+              | Days by
+              span style='color: red' 430
+              | Backers
+            h4 Teams
+            ul.teams.text-center
+              li.clearfix
+                = image_tag 'workspace-project2-team3', class: 'img-responsive img-circle'
+                h4 Samatha Smith
+                p Lead designer
+              li.clearfix
+                = image_tag 'workspace-project2-team2', class: 'img-responsive img-circle'
+                h4 John Doe
+                p App Developer
+              li.clearfix
+                = image_tag 'profile-icon', class: 'img-responsive img-circle'
+                h4 Kice
+                p Bussiness Planner
+          .tab-pane.updates#updates1
+            em.pull-right.text-italic Total 32 comments
+            h4 Recent activity
+            .row
+              .col-md-12
+                = link_to '#', class: 'load-previous' do
+                  | Load previous activity
+                  span.fa-stack
+                    = fa_icon 'chevron-up'
+            ul
+              li.starter.row
+                .col-md-4
+                  = image_tag 'project_icon', class: 'img-responsive img-circle'
+                  h4 Kice
+                  .user-role Project starter
+                  em 8:35 PM
+                .col-md-8
+                  .content
+                    p style='text-align: justify' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id odio tristique nulla finibus tristique.
+              li.row
+                .col-md-4
+                  = image_tag 'workspace-project2-team2', class: 'img-responsive img-circle'
+                  h4 Kice
+                  .user-role John
+                  em 9:45 PM
+                .col-md-8
+                  .content
+                    p style='text-align: justify' Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    .attached-image
+                      = image_tag 'workspace-attached-file-image', class: 'img-responsive'
+                      p Preview 1234.jpg
+                      span 563 kb
+              li.starter.row
+                .col-md-4
+                  = image_tag 'project_icon', class: 'img-responsive img-circle'
+                  h4 Kice
+                  .user-role Project starter
+                  em 8:35 PM
+                .col-md-8
+                  .content
+                    p style='text-align: justify' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id odio tristique nulla finibus tristique.
+              li.starter.row
+                .col-md-4
+                  = image_tag 'project_icon', class: 'img-responsive img-circle'
+                  h4 Kice
+                  .user-role Project starter
+                  em 8:35 PM
+                .col-md-8
+                  .content
+                    p style='text-align: justify' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id odio tristique nulla finibus tristique.
+              li.row
+                .col-md-4
+                  = image_tag 'workspace-project2-team2', class: 'img-responsive img-circle'
+                  h4 Kice
+                  .user-role John
+                  em 9:45 PM
+                .col-md-8
+                  .content
+                    p style='text-align: justify' Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            form.update-form
+              textarea placeholder='Quick reply'
+              input type='submit' class='btn btn-primary' value='Send'
+              .pull-right.upload-file= link_to '#' do
+                span Submit another file
+                = image_tag 'file-upload-icon', class: 'img-responsive'
+

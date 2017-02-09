@@ -1,0 +1,38 @@
+.col-xs-6.col-sm-2.col-md-2.sidebar.sidebar-left.sidebar-animate.sidebar-md-show
+  - if signed_in?
+    .sidebar-header.clearfix
+        .close-button data-target=".sidebar-left" data-toggle="sidebar"
+          = image_tag 'left-side-close-icon', class: 'hide-sidebar-icon'
+        input.search.form-control type='text' placeholder='Discover something here!'
+    ul.sidebar-list
+      li
+        = link_to '#'
+          .menu-icon.kice-icon
+          span= signed_in? ? current_user.full_name : 'Kice'
+      li
+        = link_to ideas_path
+          .menu-icon.backed-icon
+          span Job
+      li
+        = link_to '#'
+          .menu-icon.backed-icon
+          span Backed design
+      li
+        = link_to '#'
+          .menu-icon.design-icon
+          span My design / Ideas
+      li
+        = link_to designers_path
+          .menu-icon.favorite-icon
+          span Favorite Designers
+      li
+        = link_to '#'
+          .menu-icon.about-icon
+          span About
+    .sidebar-footer.clearfix
+        = link_to 'Log out', destroy_user_session_path, method: :delete, class: 'sign-up-button'
+  - else
+    .sidebar-footer.clearfix
+      .margin-top-50
+        = link_to 'Sign in', new_user_session_path, class: 'sign-in-button'
+        = link_to 'Sign up', new_user_registration_path, class: 'sign-up-button'

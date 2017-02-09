@@ -1,0 +1,27 @@
+.form-group
+  label.col-sm-4.control-label Project title:
+  .col-sm-8.project-title
+    = f.text_field :name
+.form-group
+  label.col-sm-4.control-label Project image:
+  .col-sm-8
+    .dropzone-previews.dz-message
+      .upload-file
+        p Browse image from your computer
+        p supported format .JPEG, .PNG, .GIF, .BMP
+        p max file size 50mb
+        = fa_icon 'plus'
+
+.form-group
+  label.col-sm-4.control-label Project summary:
+  .col-sm-8.project-summary
+    = f.text_area :description
+.form-group
+  label.col-sm-4.control-label Category:
+  .col-sm-8
+    = f.select :category_ids, category_select, {}, class: 'category-multi-select', multiple: true
+.form-group
+  label.col-sm-4.control-label Funding:
+  .col-sm-8.funding
+    strong $
+    = f.text_field :funding

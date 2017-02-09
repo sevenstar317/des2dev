@@ -1,0 +1,60 @@
+.authentication {
+  background: #f6f6f6;
+  margin-top: 20px;
+}
+
+.authentication form {
+  padding: 0 40px;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.authentication input[type='text'],
+.authentication input[type='password'],
+.authentication input[type='email'] {
+  text-align: center;
+  border: none;
+  background: #f6f6f6;
+  border-bottom: 1px solid #b6b2b2;
+  outline: none;
+  color: #777;
+  width: 100%;
+  font-size: 16px;
+  display: block;
+  margin: 20px auto;
+}
+
+.authentication .options p {
+  width: 350px;
+  margin-top: 10px;
+}
+
+.authentication .vertical-line {
+  float: right;
+  height: 63px;
+  width: 1px;
+  background: #ccc;
+  margin-top: 13px;
+}
+
+.authentication .fa-stack {
+  color: #00c2af;
+  font-size: 12px;
+}
+
+.authentication ul {
+  margin-top: 10px !important;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 350px;
+}
+
+.authentication a {
+  color: #00c2b1;
+  font-size: 14px;
+}
+
+.authentication a:hover {
+  color: #00c2b1;
+}

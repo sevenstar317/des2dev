@@ -1,0 +1,92 @@
+.developer-project-item {
+  padding: 0;
+  background: transparent;
+  border: none;
+  position: relative;
+}
+
+.developer-project-item .caption {
+  padding: 0;
+  padding-top: 10px;
+}
+
+.developer-project-item .caption span {
+  margin: 0 1px;
+}
+
+.developer-project-item .info-icon {
+  font-size: 10px;
+}
+
+.developer-project-item .info-icon .fa-stack {
+  margin-right: 7px;
+  margin-top: -5px;
+  width: 1em;
+}
+
+.developer-project-item .details {
+  position: absolute;
+  bottom: 26px;
+  width: 100%;
+  height: 50%;
+  background: rgba(5, 5, 5, 0.46);
+  color: white;
+  visibility: hidden;
+}
+
+.developer-project-item:hover {
+  .details {
+    visibility: visible;
+  }
+}
+
+.developer-project-item .details .content {
+  position: absolute;
+  width: 100%;
+  bottom: 5px;
+}
+.developer-project-item .join-project {
+  background: #33d2c3;
+  width: 77px;
+  font-size: 16px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: -35px;
+  padding: 15px 0;
+  border-radius: 39px;
+  cursor: pointer;
+}
+
+.developer-project-item .cover-image {
+  width: 100%;
+}
+
+.developer-project-item h3 {
+  font-weight: bold;
+  margin: 20px 0 0 10px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.developer-project-item em {
+  color: #fff;
+  margin-left: 10px;
+}
+
+.developer-project-item .details img {
+  width: 50px;
+  float: right;
+  margin-right: 4px;
+}
+
+.developer-project-item .designed-by {
+  margin-right: 65px;
+  margin-top: 16px;
+  text-align: right;
+}
+
+.developer-project-item .designed-by span {
+  display: block;
+  color: #fff;
+  text-decoration: underline;
+}

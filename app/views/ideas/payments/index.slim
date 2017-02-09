@@ -1,0 +1,49 @@
+.row
+  .col-md-8.col-md-offset-2
+    h1.orange-color Payment Methods
+    h5.pull-left Select your payment method for future purchases and subscription renewals.
+.row.idea-payment.background-grey.padding-top-20.padding-bottom-50
+  = form_for @idea, url: idea_payments_path(@idea), method: :post, class: 'clearfix' do |f|
+    .col-md-8.col-md-offset-2
+      .row
+        .col-md-8.col-sm-8
+          ul.nav.nav-tabs
+            li.active= link_to 'Credit Card', '#card', data: { toggle: 'tab' }
+            li= link_to 'Paypal', '#paypal', data: { toggle: 'tab' }
+      .row
+        .col-md-8.col-sm-8
+          .tab-content
+            .tab-pane.active#card
+              form
+                .form-group
+                  = text_field_tag :holder_name, nil, class: 'form-control', placeholder: 'Name on card'
+                .form-group
+                  = text_field_tag :number, nil, class: 'form-control', placeholder: 'Card number'
+                .form-group
+                  .row
+                    .col-md-6
+                      = text_field_tag :expire_date, nil, class: 'form-control', placeholder: 'MM/YY'
+                    .col-md-6
+                      = text_field_tag :cvc, nil, class: 'form-control', placeholder: 'CVC'
+                .form-group
+                  .checkbox.no-margin-top
+                    label.standard-text
+                      = check_box_tag :remember, nil, false
+                      | Remember this card
+            .tab-pane#paypal
+              = image_tag 'paypal', class: 'img-responsive box-center', style: 'max-width: 200px'
+              p.text-center.margin-top-20 You will be sent to PayPal in order to pay for your purchase.
+              = link_to '#', class: 'btn btn-warning margin-top-10 box-center', style: 'width: 200px' do
+                = fa_icon 'lock'
+                | Pay CA$2,199.00
+        .col-md-4.col-sm-4
+          .payment-methods
+            label Payment Methods
+            p We accept following secure payment methods:
+            = image_tag 'payment-methods', class: 'img-responsive box-center'
+            p.margin-top-10 When you submit your payment information your data is protected by Secure Socket Layer (SSL) technology certified by a digital certificate.
+      .row.margin-top-20
+        .col-md-12.col-sm-4
+          = button_tag type: 'submit', class: 'btn btn-primary box-center', style: 'width: 100px' do
+            | NEXT
+            = fa_icon 'chevron-right'

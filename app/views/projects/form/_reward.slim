@@ -1,0 +1,24 @@
+h3.title Project: Loud App
+.row.reward
+  .col-md-6.col-sm-6
+    .margin-top-10
+      canvas#reward-chart width='300' height='350'
+  .col-md-6.col-sm-6
+    h4 Reward Adjustment
+    p.text-justify Having the right Rewards is key to making sure developers feel there is value to their actions. Please adjust % of project reward.
+    strong
+    h4.strong.primary-color PHASE 1
+    .amount= number_to_currency(@project.funding)
+    .percentage.manageable-number data-step=1 data-min=0 data-max=49
+      = link_to '#', class: 'orange-circle-button decrement-btn'
+        = fa_icon 'chevron-left'
+      = f.text_field :reward, value: @project.reward || 25, id: 'reward-percentage'
+      span %
+      = link_to '#', class: 'orange-circle-button increment-btn'
+        = fa_icon 'chevron-right'
+    p.text-justify We understand a good project won't be done in a blink of eyes, sometimes it need proper process and steps. Share what will developer get in the next phase of this project!
+    h4 Percentage of future earnings
+    .upto
+      span Up to
+      = text_field_tag :upto, nil, value: 6, disabled: true
+      span x

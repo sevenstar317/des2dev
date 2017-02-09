@@ -1,0 +1,24 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  reconnect: true
+
+development:
+  <<: *default
+  host: localhost
+  database: xing_development
+  username: root
+  password:
+
+test:
+  <<: *default
+  user: admin
+  password: root
+  database: xing_test
+
+production:
+  <<: *default
+  database: xing_production
+  username: xing
+  password: <%= ENV['XING_DATABASE_PASSWORD'] %>
+

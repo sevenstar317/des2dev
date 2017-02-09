@@ -1,0 +1,78 @@
+.have-idea-page
+  .row
+    .grey-background
+      .top-content.col-md-5.col-md-offset-1.col-sm-6
+        h1.orange-color
+          | Every great projects starts
+          br
+          | from a handfull of ideas!
+          br
+          | Tell us your idea.
+      .col-md-5.col-sm-6
+        = image_tag 'mobile', class: 'img-responsive'
+  .row
+    .col-md-8.col-md-offset-2
+      h1.title
+        span.blue-color Got an idea? Let's make it happen. But first, you'll need a
+        span.yellow-color  design.
+      span.orange-color Let's talk about those brilliant ideas and let us help you realize it.
+
+      .row.text-center.margin-top-50
+        .col-md-6.have-idea-section.clearfix
+          .section-icon
+            = image_tag 'complete-app-design-icon'
+          h3 Complete app design
+          p Let's say you only have an idea about this app. Don't worry we're able to help you to visualize your idea into a complete stunning app design. Just put your idea brief, and let the designer do their job!
+          ul
+            li.green-check App logo
+            li.green-check iOS / Android launch icons
+            li.green-check Complete custom screen design
+            li.green-check App flow
+            li.green-check Ready for develop
+          = link_to "Let's Start!", ideas_path(kind: Idea::COMPLETE), class: 'btn-line', method: :post
+        .col-md-6.have-idea-section.no-border-right.clearfix
+          .section-icon
+            = image_tag 'wireframe-concept-icon'
+          h3 I have wireframes concept
+          p Already put your thoughts on a sketchbook? Scan and give it to us, designers will help polish your idea into a stunning design
+          ul
+            li.yellow-check App logo (Optional)
+            li.yellow-check iOS / Android launch icons (Optional)
+            li.green-check 5 custom screen designs
+            li.yellow-check App flow (Optional)
+            li.green-check Ready for develop
+          = link_to "Let's Start!", ideas_path(kind: Idea::WIREFRAMES), class: 'btn-line', method: :post
+      .row.text-center
+        .col-md-4.have-idea-section.clearfix.short
+          .section-icon
+            = image_tag 'logo-design-icon'
+          h3 Logo design
+          p I need a logo for my App
+          ul
+            li.green-check App logo
+            li.green-check iOS / Android launch icons
+          = link_to "Let's Start!", ideas_path(kind: Idea::LOGO), class: 'btn-line', method: :post
+        .col-md-4.have-idea-section.clearfix.short
+          .section-icon
+            = image_tag 'need-more-screen-icon'
+          h3 I need more screens
+          p You already have dome screen designs, but need more additional screens to fully complete the app
+          ul
+            li.green-check 5 custom screen designs
+            li.green-check Ready for develop
+          = link_to "Let's Start!", ideas_path(kind: Idea::SCREENS), class: 'btn-line', method: :post
+        .col-md-4.have-idea-section.no-border-right.clearfix.short
+          .section-icon
+            = image_tag 'custom-project-icon'
+          h3 Custom project
+          p Describe your aims and requirements in detail, the more specific, the better. Tell the designers what is required, but also let them know where they're free to be creative
+          ul
+            li.green-check Custom requests
+          = link_to "Let's Start!", ideas_path(kind: Idea::CUSTOM), class: 'btn-line', method: :post
+  .row.margin-top-50
+    .bottom-image.clearfix
+      .col-md-10.col-md-offset-1
+        .bottom-content
+          h1 Already got design? let's find someone to code it!
+          = link_to "Develop my design!", '#', class: 'btn-line'
+

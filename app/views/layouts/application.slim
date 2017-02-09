@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    title Design2developer
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    meta name='turbolinks-cache-control' content='no-cache'
+    script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js'
+  body
+    = render 'shared/sidebar'
+    - if current_page?(root_path)
+      = yield
+    - else
+      = render 'shared/header'
+      .container-fluid.page-wrapper
+        .row
+          .main-content.col-md-12
+            = yield
+      = render 'shared/footer'

@@ -1,0 +1,57 @@
+.expanded-content
+  .triangle
+  = link_to '#', class: 'close-btn' do
+    span.fa-stack.fa-lg.pull-left
+      = fa_icon 'close'
+    strong Close
+  .row
+    .col-md-offset-1.col-sm-offset-1.col-md-2.col-sm-2
+      label Comission
+    .col-md-9.col-sm-9
+      .comission
+        strong 85%
+      ul.membership.margin-top-10
+        li
+          .percentage +5%
+        li
+          = image_tag 'd2d-icon-colored', class: 'img-responsive'
+        li= check_box_tag :d2d_member, nil, true
+        li= link_to 'How to become a member?', '#', class: 'how-become-member'
+
+  .row.margin-top-20
+    .col-md-offset-1.col-sm-offset-1.col-md-2.col-sm-2
+      label Required items
+    .col-md-9.col-sm-9
+      ul.items
+        - idea.prices.active.each do |price|
+          li
+            .checkbox.no-margin-top
+              label.standard-text style='cursor: default'
+                input type='checkbox' checked='checked' disabled='true' style='background-color: #33d2c3 !important; border-color: #33d2c3 !important'
+                = price.kind == Price::SCREENS[:kind] ? "#{price.quantity} #{price.name}" : price.name
+  .row.margin-top-20
+    .col-md-offset-1.col-sm-offset-1.col-md-2.col-sm-2
+      label Brief
+    .col-md-9.col-sm-9
+      p.text-justify= idea.description
+  .row.margin-top-20
+    .col-md-offset-1.col-sm-offset-1.col-md-2.col-sm-2
+      label Files
+    .col-md-9.col-sm-9
+      ul.files
+        - idea.images.each do |image|
+          li
+            figure
+              = image_tag image.file_url(:thumb), class: 'img-responsive'
+              /figcaption.text-center= File.basename(image.file_url)
+  .row.margin-top-20
+    .col-md-offset-1.col-sm-offset-1.col-md-2.col-sm-2
+      label Privacy
+    .col-md-9.col-sm-9
+      .privacy
+        span Sign NDA
+        = check_box_tag :sing_nda, nil, true
+
+  .row.margin-top-20
+    .col-md-12.col-sm-12
+      = link_to 'READY', '#', class: 'btn btn-primary box-center', style: 'padding-top: 10px; width: 100px'

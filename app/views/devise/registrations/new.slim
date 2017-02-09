@@ -1,0 +1,46 @@
+.row
+  .col-md-12.col-sm-12.text-center
+    = image_tag 'home_center_text', class: 'img-responsive', style: 'display: inline-block'
+.row.authentication
+  .col-md-12
+    h1.orange-color.text-center Let's Get You Started!
+    .col-md-4.col-md-offset-4
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = devise_error_messages!
+        = f.text_field :first_name, placeholder: 'First name'
+        = f.text_field :last_name, placeholder: 'Last name'
+        = f.email_field :email, placeholder: 'Email Address', autofocus: true
+        = f.password_field :password, placeholder: 'Password', autocomplete: 'off'
+        = f.password_field :password_confirmation, placeholder: 'Retype password', autocomplete: 'off'
+        p I'll be joining a project as:
+        .row.options
+          .col-md-5
+            .vertical-line
+            .radio
+              label
+                = radio_button :backer, nil, nil, checked: true
+                span A backer
+            .radio
+              label
+                = radio_button :designer, nil, nil, checked: false
+                span A designer
+            .radio
+              label
+                = radio_button :developer, nil, nil, checked: false
+                span A developer
+          .col-md-7
+            ul
+              li.clearfix
+                span.fa-stack.fa-lg.pull-left
+                  = fa_icon 'check'
+                span Discover a one of a kind project
+              li.clearfix
+                span.fa-stack.fa-lg.pull-left
+                  = fa_icon 'check'
+                span Be a part of the ongoing development
+              li.clearfix
+                span.fa-stack.fa-lg.pull-left
+                  = fa_icon 'check'
+                span Reward guaranteed
+        .text-center.margin-top-20
+          = submit_tag "I'm ready!", class: 'btn btn-primary'

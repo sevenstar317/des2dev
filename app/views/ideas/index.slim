@@ -1,0 +1,11 @@
+.row
+  .col-md-8.col-md-offset-2
+    h1.orange-color Browse Opportunities
+    h5.pull-left Find projects
+.row.background-grey.padding-top-20.padding-bottom-50.opportunities
+  .col-md-8.col-md-offset-2
+    .row
+      form action='/ideas' data-remote='true'
+        = select_tag :category_id, options_for_select(category_select), class: 'category-single-select', prompt: 'Category', onchange: "$(this.form).submit()"
+    .ideas-list
+      = render @ideas

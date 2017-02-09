@@ -1,0 +1,304 @@
+@import 'variables';
+
+.opportunity-item .short-content {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+  margin-top: 20px;
+}
+
+.opportunity-item .expanded-content {
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  padding: 15px 20px;
+  padding-top: 40px;
+  padding-right: 50px;
+  position: relative;
+  display: none;
+}
+
+.opportunity-image {
+  float: left;
+  width: 140px;
+  height: 140px;
+  background: image-url(project1-image) no-repeat;
+  position: relative;
+}
+
+.opportunity-item .action {
+  position: absolute;
+  top: 70px;
+  background: rgba(10, 8, 8, 0.58);
+  height: 70px;
+  width: 100%;
+}
+
+.opportunity-item .action span {
+  color: #fff;
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 5px;
+}
+
+.opportunity-item .action .btn {
+  height: 30px;
+  width: 120px;
+  margin: 0 auto;
+  display: block;
+}
+
+.opportunity-item .title {
+  margin-top: -2px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.opportunity-item .description {
+  margin-left: 160px;
+}
+
+.opportunity-item .deadline span {
+  display: inline-block;
+  border: 1px solid $primary-color;
+  border-radius: 3px;
+  padding: 3px 6px;
+  margin-right: 5px;
+}
+
+.opportunity-item .deadline p {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+.opportunity-item .deadline .date {
+  width: 140px;
+}
+
+.opportunity-item .deadline > .days .fa {
+  margin-right: 5px;
+  color: $primary-color;
+}
+
+.opportunity-item .deadline > .private {
+  border: none;
+  background: #ccc;
+  padding: 4px 15px;
+  color: #fff;
+}
+
+.opportunity-item .deadline > .private .fa {
+  margin-right: 5px;
+}
+
+.opportunity-item .info-block {
+  border-left: 1px solid #ccc;
+  padding-left: 15px;
+}
+
+.opportunity-item .top-label {
+  background: $primary-color;
+  height: 30px;
+  margin: 0 auto;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  width: 110px;
+  text-align: center;
+  padding-top: 7px;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 12px;
+}
+
+.opportunities .arrow-select {
+  margin-left: 15px !important;
+}
+
+
+.opportunity-item .close-btn {
+  margin-top: -35px;
+  margin-right: -20px;
+  float: right;
+}
+
+.opportunity-item .expanded-content .triangle {
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-top: 20px solid #ccc;
+  position: absolute;
+  top: 0;
+  left: 45%;
+}
+
+.opportunity-item .expanded-content .comission {
+  margin-top: -5px;
+  strong {
+    font-size: 24px;
+    margin: 0 10px;
+  }
+  span {
+    font-size: 24px;
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  input {
+    width: 44px;
+    text-align: right;
+    outline: none;
+    border: none;
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+.opportunity-item .expanded-content .membership {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    display: inline-block;
+    height: 40px;
+    margin-right: 5px;
+    vertical-align: top;
+  }
+}
+
+.opportunity-item .expanded-content .draw-day {
+  position: absolute;
+  right: 60px;
+  top: 70px;
+  p {
+    color: $primary-color;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+  }
+  span {
+    font-weight: bold;
+    margin-left: 5px;
+  }
+  .date {
+    border: 1px solid $primary-color;
+    border-radius: 3px;
+    padding: 3px 6px;
+    margin-right: 5px;
+    font-size: 11px;
+    background: #eee;
+  }
+}
+.opportunity-item .expanded-content .membership .percentage {
+  color: #00c2b1;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.opportunity-item .expanded-content.private {
+  .membership .percentage {
+    color: #ccc;
+  }
+  .membership input[type='checkbox'] {
+    background: #fff;
+  }
+}
+
+.opportunity-item .expanded-content.private .private-image {
+  height: 70px;
+  width: 100px;
+  text-align: center;
+  font-size: 50px;
+  background: #ddd;
+  border: 1px solid $primary-color;
+  color: #fff;
+}
+
+.opportunity-item .expanded-content.private .brief {
+  height: 80px;
+  background: #ddd;
+  border: 1px solid $primary-color;
+  position: relative;
+  z-index: 0;
+  p {
+    margin-top: 35px;
+    z-index: 4;
+  }
+  p > a {
+    color: #337ab7;
+    margin-left: 5px;
+    border-bottom: 1px dashed;
+  }
+  .fa {
+    position: absolute;
+    top: 12px;
+    left: 45%;
+    font-size: 60px;
+    color: #fff;
+    z-index: -1;
+  }
+}
+
+.opportunity-item .expanded-content .membership input[type='checkbox'] {
+  margin-top: 10px;
+}
+
+.opportunity-item .expanded-content .membership .how-become-member {
+  font-style: italic;
+  color: $orange;
+  border-bottom: 1px dashed $orange;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.opportunity-item .expanded-content .files {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  li {
+    display: inline-block;
+    margin-right: 20px;
+    width: 100px;
+    height: 70px;
+  }
+}
+
+.opportunity-item .expanded-content .privacy {
+  width: 122px;
+  background: #eee;
+  border: 1px solid $primary-color;
+  border-radius: 3px;
+  padding-top: 1px;
+  text-align: center;
+  position: relative;
+  input {
+    position: absolute;
+    right: 0;
+    top: 3px;
+  }
+}
+
+.opportunity-item .items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 800px;
+  li {
+    display: inline-block;
+    width: 250px;
+  }
+}
+
+.opportunities .selectize-control {
+  margin-left: 10px;
+  .selectize-input {
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+    // background-color: #eee !important;
+    // background-image: image-url(selectbox-down-arrow);
+    // background-repeat: no-repeat;
+    // background-position: 98% 40%;
+    width: 200px;
+  }
+}

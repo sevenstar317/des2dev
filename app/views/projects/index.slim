@@ -1,0 +1,98 @@
+.projects
+  - @projects.each do |project|
+    .row
+      .col-md-8.col-md-offset-2
+        h2= project.to_s
+    .row.project-item
+      .col-md-8.col-md-offset-2
+        .row
+          .col-md-6.col-sm-12.col-xs-12
+            = image_tag 'project_icon', class: 'project-icon img-responsive'
+            strong.company-name= project.owner.to_s
+            p Redefine new way of Game competition
+          .col-md-6.col-sm-12.col-xs-12
+            .col-md-4.no-padding.col-sm-4
+              .info-icon.clearfix
+                span.fa-stack.fa-lg.pull-left
+                  = fa_icon 'heart'
+                span.info 560 funders
+              .info-icon.clearfix
+                span.fa-stack.fa-lg.pull-left
+                  = fa_icon 'calendar'
+                span.info 55 days left
+            .col-md-4.no-padding.col-sm-4
+              .info-icon.clearfix
+                span.fa-stack.fa-lg.pull-left
+                  = fa_icon 'map-marker'
+                span.info Salt Lake City, UT
+              .info-icon.clearfix
+                span.fa-stack.fa-lg.pull-left
+                  = fa_icon 'info-circle'
+                span.info Technology
+            .col-md-4.no-padding.col-sm-4
+              .info-icon.clearfix
+                span.fa-stack.fa-lg.pull-left
+                  = fa_icon 'tags'
+                span.info= project.categories.pluck(:name).join(', ')
+        .row
+          .col-md-6.col-sm-12.col-xs-12
+            - if project.image && project.image.file_url.present?
+              = image_tag project.image.file_url(:standard), class: 'project-image img-responsive'
+              = image_tag project.image.file_url(:large), class: 'project-image-lg img-responsive'
+          .col-md-6.col-sm-12.col-xs-12
+            .description
+              h3
+                Project Overview
+                span |
+                = link_to 'Rewards', '#'
+              p= project.description
+              - if project.our_story.present?
+                h4 Our Story
+                p= project.our_story
+              h4 What You're Supporting
+              p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id odio tristique nulla finibus tristique. Quisque ultrices turpis sed tortor molestie, at accumsan ipsum pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id odio tristique nulla finibus tristique. Quisque ultrices turpis sed tortor molestie, at accumsan ipsum pharetra.
+              - if project.our_team.present?
+                h4 Our Team
+                p= project.our_team
+              h4 Investors
+              p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id odio tristique nulla finibus tristique. Quisque ultrices turpis sed tortor molestie, at accumsan ipsum pharetra.
+            .funding-progress
+              strong
+                | Funded $0
+              span.pull-right
+                | of $
+                = project.funding
+              .progress
+                .progress-bar.progress-bar-info aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" style=("width: 1%")
+                  span.sr-only 40% Complete (success)
+            = link_to '2 Developers', '#', class: 'custom-button developers-button'
+            .support-project
+              p Support this project
+              input type='text' value='$ 50'
+              = link_to 'Continue', '#', class: 'custom-button'
+            ul.socials
+              li.info-icon
+                span.fa-stack.fa-lg.pull-left
+                  = fa_icon 'facebook'
+                span.info Share
+              li.info-icon
+                span.fa-stack.fa-lg.pull-left
+                  = fa_icon 'twitter'
+                span.info Tweet
+              li.info-icon
+                span.fa-stack.fa-lg.pull-left
+                  = fa_icon 'pinterest-p'
+                span.info Pin it
+              li.info-icon
+                span.fa-stack.fa-lg.pull-left
+                  = fa_icon 'tumblr'
+                span.info Post
+            .info-icon.clearfix
+              span.fa-stack.fa-lg.pull-left
+                = fa_icon 'heart-o'
+              span.info Save for later
+= link_to '#site-header', class: 'scroll-up' do
+  = image_tag 'scroll_up_icon'
+
+= link_to 'Lead more projects', '#', class: 'btn-line-lg more-projects'
+

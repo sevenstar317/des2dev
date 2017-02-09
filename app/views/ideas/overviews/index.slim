@@ -1,0 +1,116 @@
+.row
+  .col-md-8.col-md-offset-2
+    h1.orange-color Let's sum it up
+    h5.pull-left We almost ready, it's time to do a final check.
+.row.idea-overview.background-grey.padding-top-20.padding-bottom-50
+  .col-md-8.col-md-offset-2
+    = form_for @idea, url: idea_overviews_path(@idea), method: :post do |f|
+      .row
+        .col-md-2.col-sm-2
+          label Name
+        .col-md-10.col-sm-10
+          h3.title= @idea.to_s
+      .row.margin-top-10
+        .col-md-2.col-sm-2
+          label Items
+        .col-md-10.col-sm-10
+          ul.items
+            - @idea.prices.active.each do |price|
+              li
+                .checkbox.no-margin-top
+                  label.standard-text style='cursor: default'
+                    input type='checkbox' checked='checked' disabled='true' style='background-color: #33d2c3 !important; border-color: #33d2c3 !important'
+                    = price.kind == Price::SCREENS[:kind] ? "#{price.quantity} #{price.name}" : price.name
+      .row.margin-top-10
+        .col-md-2.col-sm-2
+          label Category
+        .col-md-10.col-sm-10
+          p= @idea.categories.pluck(:name).join(', ')
+      .row.margin-top-10
+        .col-md-2.col-sm-2
+          label Designer
+        .col-md-10.col-sm-10
+          p= lov_t(@idea.designer_participation, :designer_participation)
+      .row.margin-top-10
+        .col-md-2.col-sm-2
+          label Overview
+        .col-md-10.col-sm-10
+          #accordion.panel-group
+            .panel.panel-default
+              .panel-heading
+                h4.panel-title
+                  a.collapse-trigger data-parent='#accordion' data-toggle='collapse' href='#description'
+                    | Description
+                    .collapse-icon.up
+              #description.panel-collapse.collapse.in
+                .panel-body
+                  = @idea.description
+            .panel.panel-default
+              .panel-heading
+                h4.panel-title
+                  a.collapse-trigger data-parent='#accordion' data-toggle='collapse' href='#deadline'
+                    | Deadline
+                    .collapse-icon.down
+              #deadline.panel-collapse.collapse
+                .panel-body
+                  = @idea.deadline && @idea.deadline.strftime('%B %d, %Y')
+            .panel.panel-default
+              .panel-heading
+                h4.panel-title
+                  a.collapse-trigger data-parent='#accordion' data-toggle='collapse' href='#device'
+                    | Devise
+                    .collapse-icon.down
+              #device.panel-collapse.collapse
+                .panel-body
+                  = idea_devices_names(@idea)
+      .row.margin-top-10
+        .col-md-2.col-sm-2
+          label Files
+        .col-md-10.col-sm-10
+          ul.files
+            - @idea.images.each do |image|
+              li
+                figure
+                  = image_tag image.file_url(:thumb), class: 'img-responsive'
+                  /figcaption.text-center= File.basename(image.file_url)
+      .row.margin-top-10
+        .col-md-2.col-sm-2
+          label Price
+        .col-md-10.col-sm-10
+          .price
+            .subtotal
+              strong.primary-color Subtotal
+              span= number_to_currency(@idea.total_price)
+            .plus
+              span +
+            .contest-free
+              strong.primary-color Contest free
+              span.orange-color= @idea.contest? ? '20%' : '0%'
+            .grand-total
+              strong.primary-color Grand total
+              span= number_to_currency(@idea.grand_total)
+      .row.margin-top-10
+        .col-md-2.col-sm-2
+          label Option
+        .col-md-10.col-sm-10
+          .checkbox.no-margin-top
+            label.standard-text
+              = f.check_box :private_contest
+              strong Private Contest
+            p.no-margin Hide your contest from search engines and have designers sign a confidentiality agreement.
+            p.no-margin
+              We provide a standard template for the
+              = link_to 'NDA', '#', class: 'text-link no-margin-right'
+              |. Anyone who wants to read your brief
+            p.no-margin or submit designers must agree to this document first.
+
+      .row.margin-top-10
+        .col-md-12.col-sm-12
+          .pull-right
+            = link_to idea_briefs_path(@idea), class: 'btn btn-primary btn-sm margin-right-10' do
+              = fa_icon 'chevron-left'
+              | BACK
+            = button_tag type: 'submit', class: 'btn btn-primary btn-sm' do
+              | NEXT
+              = fa_icon 'chevron-right'
+

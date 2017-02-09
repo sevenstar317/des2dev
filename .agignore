@@ -1,0 +1,8 @@
+tmp/
+log/
+spec/
+db/migrate/
+.git/
+tags
+public/uploads/
+vendor/

@@ -1,0 +1,212 @@
+.project-nav {
+  margin-left: -30px;
+  margin-top: 5px;
+}
+
+.project-nav > li > a {
+  font-size: 18px;
+}
+
+.project-nav > li > a:hover {
+  color: #333;
+}
+
+.project-item .updates ul {
+  list-style: none;
+  padding: 0;
+}
+
+.project-item .updates li img {
+  float: left;
+  width: 34px;
+  margin-right: 10px;
+}
+
+.project-item .updates li .user-role {
+  width: 94px;
+  border: 1px solid #338bd2;
+  margin-left: 40px;
+  border-radius: 5px;
+  background: white;
+  color: #333;
+  text-align: center;
+}
+
+.project-item .updates li.starter .user-role {
+  border: 1px solid #33d2c3;
+}
+
+.project-item .updates li h4 {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.project-item .updates li em {
+  font-size: 10px;
+  margin-left: 45px;
+  color: #777;
+}
+
+.project-item .updates li {
+  margin-bottom: 20px;
+}
+
+.project-item .updates li .content {
+  margin-left: 10px;
+}
+
+.project-item .updates li .content img {
+  width: 92px;
+  float: left;
+}
+
+.project-item .updates li .content .attached-image p {
+  padding-top: 10px;
+  margin-bottom: 0;
+}
+
+.update-form textarea {
+  width: 100%;
+  outline: none;
+  resize: none;
+  height: 70px;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+.update-form textarea::-webkit-input-placeholder {
+  text-align: center;
+  padding-top: 20px;
+}
+.update-form textarea:-moz-placeholder {
+  text-align: center;
+  padding-top: 50px;
+}
+.update-form textarea::-moz-placeholder {
+  text-align: center;
+  padding-top: 50px;
+}
+.update-form textarea:-ms-input-placeholder {
+  text-align: center;
+  padding-top: 50px;
+}
+
+.update-form .btn {
+  font-size: 16px;
+  width: 120px;
+  padding-top: 8px;
+  font-weight: 400;
+  height: 36px;
+}
+
+.update-form .upload-file span {
+  color: #009ddb;
+  border-bottom: 1px solid rgba(0, 157, 219, 0.3);
+}
+
+.update-form .upload-file img {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.project-item .overview p span {
+  margin: 0 5px;
+}
+
+.project-item .overview .read-more {
+  float: right;
+  color: #00a5de;
+  font-style: italic;
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 10px;
+}
+
+.project-item .overview .teams {
+  list-style: none;
+  padding-left: 0;
+}
+
+.project-item .overview .teams li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.project-item .overview .teams img {
+  width: 70px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.project-item .overview .teams h4 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.project-item .close-btn {
+  margin-right: -20px;
+  width: 87px;
+  float: right;
+}
+
+.selected img {
+  opacity:0.5;
+}
+
+.slider-thumb {
+  display: inline-block;
+  cursor: pointer;
+  margin: 0 2px;
+  width: 85px;
+  height: 85px;
+  overflow: hidden;
+}
+
+.slider-control {
+  display: block;
+  position: absolute;
+  z-index: 1;
+}
+
+.slider-control .fa-stack {
+  height: 85px;
+  padding: 30px 0 0 5px;
+  background: #ccc;
+  width: 20px;
+  color: white;
+  font-size: 13px;
+}
+
+#project-thumb-carousel .carousel-inner {
+  width: 358px;
+  position: absolute;
+}
+
+#project-thumb-carousel {
+  height: 80px;
+}
+
+#project-thumb-carousel .slider-control.left{
+  left: 0;
+}
+
+#project-thumb-carousel .slider-control.right{
+  right: 0;
+}
+
+.load-previous {
+  display: block;
+  font-size: 14px;
+  text-decoration: underline;
+  margin: 0 0 10px 0;
+  text-align: center;
+}
+
+.load-previous:hover {
+  text-decoration: underline !important;
+}
+
+.load-previous .fa-stack {
+  margin-left: 5px;
+}

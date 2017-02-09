@@ -1,0 +1,96 @@
+.row.designers
+  .top-background
+    h1 Make it happen.
+  .col-md-8.col-md-offset-2.col-sm-12.top-content
+    .col-md-4.col-sm-4
+      = image_tag 'profile-icon', class: 'img-responsive pull-left'
+      h2 Kice
+    .col-md-4.col-sm-4
+      = link_to 'Start a Project', overview_projects_path, class: 'btn btn-primary start-project'
+    .col-md-4.col-sm-4
+      ul.nav.nav-pills
+        li.active= link_to 'Project', '#project', data: { toggle: 'pill' }
+        li= link_to 'About', '#about', data: { toggle: 'pill' }
+    .col-md-12.col-sm-12
+      hr
+
+  .col-md-8.col-md-offset-2.col-sm-12
+    .tab-content
+      .tab-pane#about
+        .col-md-6.col-sm-6
+          h4 About
+          p.text-justify Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.
+          em Member since: 15 December 2016
+          h4 Expertise
+          p.text-justify There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.
+        .col-md-6.col-sm-6
+          h4 Stats
+          .stats.clearfix
+            .col-md-3
+              .points 16
+              p.text-center Finished projects
+            .col-md-3
+              .points 14
+              p.text-center Design done
+            .col-md-3
+              .points 2
+              p.text-center Coding done
+            .col-md-3
+              .points 7
+              p.text-center Repeat Clients
+
+          h4.margin-top-20 Reviews
+          .feedback
+            = fa_icon 'star', class: 'fa-lg'
+            = fa_icon 'star', class: 'fa-lg'
+            = fa_icon 'star', class: 'fa-lg'
+            = fa_icon 'star', class: 'fa-lg'
+            = fa_icon 'star', class: 'fa-lg'
+            p
+              em Great Job! Would definitely will work with him again.
+          .feedback
+            = fa_icon 'star', class: 'fa-lg'
+            = fa_icon 'star', class: 'fa-lg'
+            = fa_icon 'star', class: 'fa-lg'
+            = fa_icon 'star', class: 'fa-lg'
+            = fa_icon 'star', class: 'fa-lg'
+            p
+              em Great Job! Would definitely will work with him again.
+          .feedback
+            = fa_icon 'star', class: 'fa-lg'
+            = fa_icon 'star', class: 'fa-lg'
+            = fa_icon 'star', class: 'fa-lg'
+            = fa_icon 'star', class: 'fa-lg'
+            = fa_icon 'star', class: 'fa-lg'
+            p
+              em Great Job! Would definitely will work with him again.
+          .feedback
+            = fa_icon 'star', class: 'fa-lg'
+            = fa_icon 'star', class: 'fa-lg'
+            = fa_icon 'star', class: 'fa-lg'
+            = fa_icon 'star', class: 'fa-lg'
+            = fa_icon 'star', class: 'fa-lg'
+            p
+              em Great Job! Would definitely will work with him again.
+          .margin-top-20
+            = link_to 'More review', '#', class: 'btn btn-warning'
+
+      .tab-pane.active#project
+        .col-md-12.col-sm-12
+          .category-select-wrapper.pull-right
+            select.category-select
+              option Categories
+          h5.pull-left Design portfolio
+        .col-md-12.col-sm-12
+          .row
+            = render partial: 'designer_project_item', locals: { project_image: 'profile-image1' }
+            = render partial: 'designer_project_item', locals: { project_image: 'profile-image2' }
+            = render partial: 'designer_project_item', locals: { project_image: 'profile-image3' }
+            = render partial: 'designer_project_item', locals: { project_image: 'profile-image4' }
+            = render partial: 'designer_project_item', locals: { project_image: 'profile-image5' }
+            = render partial: 'designer_project_item', locals: { project_image: 'profile-image6' }
+        .col-md-12
+          = link_to '#', class: 'load-more', style: 'margin: 0 0 -80px 0;' do
+            = image_tag 'developer-more-icon'
+
+

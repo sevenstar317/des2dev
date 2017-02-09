@@ -1,0 +1,107 @@
+@import 'variables';
+
+.have-idea-page .top-content {
+  color: $orange;
+}
+
+.have-idea-page .grey-background {
+  background: #f6f6f6;
+  margin-top: -20px;
+  height: 280px;
+}
+
+.have-idea-page .top-content h1 {
+  margin: 0 auto;
+  margin-top: 80px;
+  display: block;
+  width: 450px;
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: bold;
+}
+
+.have-idea-page .title span {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.have-idea-section {
+  position: relative;
+  height: 480px;
+  padding-top: 30px;
+  padding-bottom: 100px;
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+.have-idea-section.short {
+  height: 380px;
+  border-bottom: none;
+}
+
+.have-idea-section img {
+  display: inline-block;
+}
+
+.have-idea-section .btn-line {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  margin: 0 auto;
+}
+
+.yellow-check {
+  background-image: url(yellow-check-mark);
+  background-repeat: no-repeat;
+  line-height: 20px;
+  padding-left: 30px;
+  margin: 10px 0;
+}
+
+.green-check {
+  background-image: url(blue-check-mark);
+  background-repeat: no-repeat;
+  line-height: 20px;
+  padding-left: 30px;
+  margin: 10px 0;
+}
+
+.have-idea-section ul {
+  text-align: left;
+  margin-left: 40px;
+  list-style: none;
+}
+
+.have-idea-section.short ul {
+  margin-left: 10px;
+}
+
+.have-idea-section .section-icon {
+  height: 90px;
+}
+
+.have-idea-page .bottom-image {
+  background: url(have-idea-bottom-background) no-repeat;
+  background-size: cover;
+  height: 250px;
+}
+
+.have-idea-page .bottom-image h1 {
+  font-weight: normal;
+  color: white;
+}
+
+.have-idea-page .bottom-content {
+  margin: 0 auto;
+  width: 900px;
+  margin-top: 80px;
+}
+
+.have-idea-page .bottom-image .btn-line {
+  background: transparent;
+  float: right;
+  color: #fff;
+  width: 235px;
+}

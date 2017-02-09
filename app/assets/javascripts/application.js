@@ -1,0 +1,11 @@
+//= require jquery
+//= require jquery_ujs
+//= require turbolinks
+//= require bootstrap-sprockets
+//= require textcounter.min
+//= require selectize.min
+//= require datepicker.min
+//= require datepicker.en
+//= require jquery-fileupload/basic
+//= require dropzone
+//= require_tree .

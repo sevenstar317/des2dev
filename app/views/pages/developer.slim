@@ -1,0 +1,19 @@
+.row
+  .col-md-8.col-md-offset-2
+    h1.orange-color Ready-to-go Project
+    .category-select-wrapper.pull-right
+      select.category-select
+        option Categories
+    h5.pull-left Funded projects that requires developers.
+.row.background-grey.padding-top-20.padding-bottom-50
+  .col-md-8.col-md-offset-2
+    .row
+      = render partial: 'developer_project_item', locals: { project_image: 'profile-image1' }
+      = render partial: 'developer_project_item', locals: { project_image: 'profile-image2' }
+      = render partial: 'developer_project_item', locals: { project_image: 'profile-image3' }
+      = render partial: 'developer_project_item', locals: { project_image: 'profile-image4' }
+      = render partial: 'developer_project_item', locals: { project_image: 'profile-image5' }
+      = render partial: 'developer_project_item', locals: { project_image: 'profile-image6' }
+
+= link_to '#', class: 'load-more' do
+  = image_tag 'developer-more-icon'
